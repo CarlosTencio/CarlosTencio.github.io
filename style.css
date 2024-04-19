@@ -79,7 +79,12 @@ img {
 .skills-logo {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espacio entre los logos */
+    gap: 20px;
+    /* Espacio entre los logos */
+}
+
+.skills-card h4 {
+    text-align: center;
 }
 
 .skills-logo div {
@@ -88,23 +93,30 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    background-color: white; /* Fondo blanco */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    background-color: white;
+    /* Fondo blanco */
 }
 
 .skills-logo div i {
-    font-size: 3em; /* Tamaño de ícono */
+    font-size: 3em;
+    /* Tamaño de ícono */
 }
 
 .skills-logo div label {
-    font-size: 1.2em; /* Tamaño de texto */
-    margin-top: 10px; /* Espacio superior */
+    font-size: 1.2em;
+    /* Tamaño de texto */
+    margin-top: 10px;
+    /* Espacio superior */
 }
 
-.educacion{
+.educacion {
     background-color: #D4A373;
 }
+
 /*
     .formacion-academica {
         text-align: center; 
