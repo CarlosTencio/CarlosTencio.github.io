@@ -4,7 +4,9 @@ body {
     padding: 0;
 }
 
-header {}
+body {
+    font-family: 'Montserrat', sans-serif;
+  }
 
 .nav-links {
     background-color: #faedcd;
@@ -100,7 +102,10 @@ img {
     background-color: white;
     /* Fondo blanco */
 }
-
+.logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 .skills-logo div i {
     font-size: 3em;
     /* Tamaño de ícono */
@@ -117,21 +122,21 @@ img {
     background-color: #D4A373;
 }
 
-/*
-    .formacion-academica {
-        text-align: center; 
-    }
-    
-    .formacion-academica>div {
-        display: flex; 
-        justify-content: center; 
-    }
-    .h-formacion{
-       margin-right: 50px;
-    }
-    .universidad{
-        background-color: white;
-    }
-    .curso{
-        background-color: blue;
-    }*/
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 20%;
+    margin: 10px;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
