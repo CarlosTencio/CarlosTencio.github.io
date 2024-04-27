@@ -140,3 +140,156 @@ img {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+.contacto {
+    background-color: #faedcd;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.contacto-info {
+    margin: auto;
+    max-width: 600px;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+/* Estilos para tabletas */
+@media only screen and (max-width: 768px) {
+    .nav-links {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    .contenido-l {
+        padding: 2em;
+    }
+
+    .foto img {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .skills-logo div {
+        width: 100px;
+        height: 100px;
+    }
+
+    .skills-logo div i {
+        font-size: 2.5em;
+    }
+
+    .skills-logo div label {
+        font-size: 1em;
+    }
+
+    .card {
+        width: 45%;
+    }
+}
+/* Estilos para tabletas y dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    .nav-links {
+        padding: 1em;
+    }
+
+    .div-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenido-l {
+        padding: 2em;
+    }
+
+    .foto img {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .skills-logo {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .skills-logo div {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+    }
+
+    .skills-logo div i {
+        font-size: 2.5em;
+    }
+
+    .skills-logo div label {
+        font-size: 0.8em;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .sobremi>div {
+        padding: 2em;
+    }
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 480px) {
+    .nav-links {
+        padding: 0.5em;
+    }
+
+    .div-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenido-l {
+        padding: 1em;
+    }
+
+    .foto img {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .skills-logo div {
+        width: 80px;
+        height: 80px;
+        margin: 5px;
+    }
+
+    .skills-logo div i {
+        font-size: 2em;
+    }
+
+    .skills-logo div label {
+        font-size: 0.6em;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .sobremi>div {
+        padding: 1em;
+    }
+}
