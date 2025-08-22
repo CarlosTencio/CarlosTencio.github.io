@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Un Cuento de Amor Verdadero</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Crimson Text', serif;
+      background: linear-gradient(135deg, #f8f1e4 0%, #e8dcc5 50%, #f4e6d0 100%);
+      color: #3d2b1f;
+      line-height: 1.8;
+      min-height: 100vh;
+      animation: backgroundShift 20s ease-in-out infinite;
+    }
+    
+    @keyframes backgroundShift {
+      0%, 100% { background: linear-gradient(135deg, #f8f1e4 0%, #e8dcc5 50%, #f4e6d0 100%); }
+      50% { background: linear-gradient(135deg, #e8dcc5 0%, #f4e6d0 50%, #f8f1e4 100%); }
+    }
+    
+    .storybook {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(120, 80, 50, 0.15);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .storybook::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #8c5e3c, #a47148, #d4a373, #8c5e3c);
+      background-size: 400% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+    
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    .cover {
+      background: linear-gradient(45deg, #a47148, #8c5e3c);
+      color: white;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cover::before {
+      content: '🍂';
+      position: absolute;
+      font-size: 2rem;
+      animation: float 3s ease-in-out infinite;
+      top: 20px;
+      left: 80px;
+    }
+    
+    .cover::after {
+      content: '🌿';
+      position: absolute;
+      top: 40px;
+      right: 60px;
+      font-size: 1.5rem;
+      animation: float 3s ease-in-out infinite 1s;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+    
+    .cover h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .cover p {
+      font-size: 1.3rem;
+      font-style: italic;
+      opacity: 0.95;
+    }
+    
+    .story-content {
+      padding: 50px 45px;
+    }
+    
+    .chapter {
+      margin-bottom: 40px;
+      position: relative;
+    }
+    
+    .chapter-number {
+      position: absolute;
+      left: -30px;
+      top: 0;
+      background: linear-gradient(45deg, #a47148, #8c5e3c);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(120, 80, 50, 0.3);
+    }
+    
+    .chapter h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #8c5e3c;
+      margin-bottom: 20px;
+      padding-left: 15px;
+      border-left: 4px solid #a47148;
+    }
+    
+    .chapter p {
+      font-size: 1.15rem;
+      margin-bottom: 18px;
+      text-align: justify;
+      text-indent: 1.5em;
+    }
+    
+    .chapter:first-child p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif;
+      float: left;
+      font-size: 4rem;
+      line-height: 3rem;
+      margin: 8px 8px 0 0;
+      color: #8c5e3c;
+      font-weight: bold;
+    }
+    
+    .magical-quote {
+      background: linear-gradient(135deg, rgba(164, 113, 72, 0.1), rgba(140, 94, 60, 0.1));
+      border: none;
+      border-radius: 20px;
+      padding: 30px;
+      margin: 30px 0;
+      position: relative;
+      font-style: italic;
+      font-size: 1.2rem;
+      text-align: center;
+      color: #5c4033;
+    }
+    
+    .magical-quote::before,
+    .magical-quote::after {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: #a47148;
+      opacity: 0.5;
+      position: absolute;
+    }
+    
+    .magical-quote::before {
+      content: '"';
+      top: -10px;
+      left: 20px;
+    }
+    
+    .magical-quote::after {
+      content: '"';
+      bottom: -30px;
+      right: 20px;
+    }
+    
+    .epilogue {
+      background: linear-gradient(135deg, #a47148, #8c5e3c);
+      color: white;
+      padding: 40px;
+      margin-top: 40px;
+      border-radius: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .epilogue::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: sparkle 20s linear infinite;
+    }
+    
+    @keyframes sparkle {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .epilogue h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .epilogue p {
+      font-size: 1.2rem;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 15px;
+    }
+    
+    .ring-animation {
+      display: inline-block;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    .timeline {
+      text-align: center;
+      margin-top: 40px;
+      padding: 25px;
+      background: rgba(164, 113, 72, 0.05);
+      border-radius: 15px;
+      font-style: italic;
+      color: #5c4033;
+    }
+    
+    @media (max-width: 768px) {
+      .storybook {
+        margin: 20px;
+        border-radius: 20px;
+      }
+      
+      .cover {
+        padding: 40px 30px;
+      }
+      
+      .cover h1 {
+        font-size: 2.2rem;
+      }
+      
+      .story-content {
+        padding: 30px 25px;
+      }
+      
+      .chapter-number {
+        position: static;
+        margin-bottom: 15px;
+        margin-left: 0;
+      }
+      
+      .chapter h2 {
+        padding-left: 0;
+        border-left: none;
+        border-bottom: 2px solid #a47148;
+        padding-bottom: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="storybook">
+    <div class="cover">
+      <h1>Un Cuento de Amor Verdadero</h1>
+      <p>Una historia de corazones que aprendieron a latir juntos</p>
+    </div>
+    
+    <div class="story-content">
+      <div class="chapter">
+        <div class="chapter-number">1</div>
+        <h2>El Despertar del Corazón</h2>
+        <p>Había una vez, hace siete años, cuando el destino plantó una semilla especial en un corazón joven. Sin saber muy bien por qué, comenzó a enviar mensajes que parecían tontos pero estaban llenos de cariño secreto. Sus abrazos se volvieron más largos, sus miradas más tiernas, y poco a poco creó un lenguaje mágico hecho de gestos pequeños que solo dos corazones podían entender.</p>
+        
+        <p>Ella, con su sonrisa sabia, notó estos pequeños hechizos de amor. En lugar de huir, decidió seguir el juego del corazón. Así comenzaron a caminar por senderos secretos, tomándose de la mano cuando nadie los veía, descubriendo la dulce emoción de un amor que crecía en silencio, como las flores más hermosas que florecen al amanecer.</p>
+      </div>
+      
+      <div class="chapter">
+        <div class="chapter-number">2</div>
+        <h2>El Santuario de los Susurros</h2>
+        <p>En el corredor de su casa nació su refugio secreto. Allí, las palabras se mezclaban con risas cristalinas y los besos nacían como relámpagos de felicidad, iluminando cada rincón de sus días. Cada encuentro era un tesoro, cada momento robado se convertía en un diamante en el cofre de sus recuerdos.</p>
+        
+        <p>Como en los cuentos más hermosos, las puertas de su hogar se abrieron para recibirlo. Su familia lo acogió con brazos abiertos, y él se convirtió en parte de algo más grande y hermoso. Su primer Año Nuevo juntos fue una promesa silenciosa: ya no eran solo dos personas enamoradas, sino el comienzo de una familia, de un hogar construido con amor y risas compartidas.</p>
+      </div>
+      
+      <div class="chapter">
+        <div class="chapter-number">3</div>
+        <h2>El Arte de Conocerse</h2>
+        <p>Los días se transformaron en páginas de un libro precioso: caminatas bajo el sol, risas que resonaban como música, secretos susurrados al oído, abrazos que hablaban sin palabras y silencios cómplices. La intimidad les enseñó un idioma nuevo: el lenguaje de las miradas, de los gestos tiernos, de los momentos compartidos que los unían más y más.</p>
+        
+        <p>Él fue testigo de su grandeza, de cómo ella iluminaba cada espacio con su presencia. Compartieron aventuras grandes y pequeñas, momentos escondidos del mundo donde solo existían ellos dos. Cada mandado juntos, cada espera en la universidad, se convertía en una pequeña declaración de amor que él guardaba como un tesoro en su corazón.</p>
+      </div>
+      
+      <div class="chapter">
+        <div class="chapter-number">4</div>
+        <h2>Las Tormentas y el Arcoíris</h2>
+        <p>Porque hasta en los cuentos de hadas más hermosos llegan las tormentas, él cometió errores, se equivocó en el camino. Pero ella, con la belleza de su alma generosa y su amor inmenso como el océano, le tendió la mano y le ofreció una segunda oportunidad. Él conoció la felicidad verdadera, aunque volvería a tropezar en el camino del aprendizaje.</p>
+        
+        <p>Pero como en toda buena historia, él aprendió de sus errores, para ser el hombre perfecto para la protagonista de su vida. Hoy se ha convertido en un hombre diferente, con herramientas nuevas en su corazón y la sabiduría para amar de la manera correcta a quien se ganó su alma completa. Ha aprendido que el amor verdadero no es solo sentir, sino elegir cada día amar mejor.</p>
+      </div>
+      
+      <div class="magical-quote">
+        Aquí estoy, para amarte bien, para elegirte siempre, y para quedarme contigo en cada capítulo que escribamos juntos. O en cada capítulo de tu vida, aunque no me quieras en ella.
+      </div>
+      
+      <div class="epilogue">
+        <h3>El Compromiso Eterno</h3>
+        <p>De mensajes tontos y abrazos escondidos nació un amor que sabe perdonar, crecer y quedarse. Un amor que se fortalece con cada día, que celebra en la risa y encuentra refugio en la comprensión mutua.</p>
+        
+        <p>Y aquí, con todo su corazón abierto como un libro de promesas, él se compromete a estar siempre para ella, a acompañarla en cada paso de su camino, a celebrar cada una de sus sonrisas y a cuidar de su amor como el jardinero cuida de la rosa más preciada. Porque aunque por ahora este compromiso viva solo en su corazón, él ya ha decidido: su amor es para siempre. <span class="ring-animation">🌻</span></p>
+      </div>
+      
+      <div class="timeline">
+        <strong>Una historia escrita con amor</strong><br>
+        7 años desde el primer "hola" · Casi 6 años construyendo sueños juntos<br>
+        Y toda una vida por delante para seguir amando...
+      </div>
+    </div>
+  </div>
+</body>
+</html>
